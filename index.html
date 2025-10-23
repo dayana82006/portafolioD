@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Portafolio Profesional - Bailarina</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Bailarina</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Sobre mí</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#videos" class="nav-link">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experiencia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#certificates" class="nav-link">Certificados</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Dayana </span>
+                        <span class="title-line">Hernandez</span>
+                    </h1>
+                    <p class="hero-subtitle">Bailarina profesional especializada en ballet clásico y danza contemporánea</p>
+                    <div class="hero-buttons">
+                        <a href="#gallery" class="btn btn-primary">Ver Trabajo</a>
+                        <a href="#contact" class="btn btn-secondary">Contactar</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-photo">
+                        <img src="images/foto1.jpeg" alt="Bailarina profesional" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre mí</h2>
+                <p class="section-subtitle">Mi pasión por la danza comenzó hace más de 15 años</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        Soy una bailarina integra con 2 años de experiencia en la danza, enfocada principalmente en los estilos 
+                        de danza contemporánea. Mi formación se ha desarrollado en la Escuela Municipal de Artes, y los primeros pasos que se dieron en Studio 5,
+                        donde he aprendido a conectar la técnica con la expresión emocional. La danza para mí es más que un arte: 
+                        es una forma de vida que me enseña disciplina, sensibilidad y perseverancia en cada movimiento.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Años de experiencia</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Presentaciones</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-photo">
+                        <img src="images/foto2.jpeg" alt="Bailarina profesional" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Galería</h2>
+                <p class="section-subtitle">Momentos capturados de mi arte en movimiento</p>
+            </div>
+           
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="ballet">
+                    <div class="gallery-image">
+                        <img src="images/presentacion1.jpeg" alt="Ballet Clásico" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3>Ballet Clásico</h3>
+                            <p>El Lago de los Cisnes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="contemporary">
+                    <div class="gallery-image">
+                        <img src="images/presentacion2.jpeg" alt="Danza Contemporánea" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3>Danza Contemporánea</h3>
+                            <p>Expresión Moderna</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="performance">
+                    <div class="gallery-image">
+                        <img src="images/presentacion3.jpeg" alt="Presentación en Teatro" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3>Presentación</h3>
+                            <p>Teatro Nacional</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ballet">
+                    <div class="gallery-image">
+                        <img src="images/presentacion4.jpeg" alt="Ballet Clásico" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3>Variaciones</h3>
+                            <p>Ballet Clásico</p>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="gallery-item" data-category="performance">
+                    <div class="gallery-image">
+                        <img src="images/presentacion6.jpeg" alt="Presentación Especial" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3>Gala</h3>
+                            <p>Evento Especial</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ballet">
+                    <div class="gallery-image">
+                        <img src="images/presentacion7.jpeg" alt="Ballet Profesional" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3>Profesional</h3>
+                            <p>Ballet Clásico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Videos</h2>
+                <p class="section-subtitle">Presentaciones en movimiento - Mi arte en acción</p>
+            </div>
+            <div class="videos-grid">
+                <div class="video-item">
+                    <div class="video-container">
+                        <video class="video-player" controls>
+                            <source src="videos/presentacion1.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3>>Danza Contemporánea</h3>
+                        <p>HIMNO</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-container">
+                        <video class="video-player" controls>
+                            <source src="videos/presentacion2.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3>Danza Contemporánea</h3>
+                        <p>Expresión Moderna</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-container">
+                        <video class="video-player" controls>
+                            <source src="videos/presentacion3.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3>Danza Contemporánea</h3>
+                        <p>Muestra final EMA</p>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-container">
+                        <video class="video-player" controls>
+                            <source src="videos/presentacion4.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3>Danza Contemporánea</h3>
+                        <p>HIMNO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+<section id="experience" class="experience">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Experiencia</h2>
+            <p class="section-subtitle">Mi trayectoria profesional en la danza</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date"></div>
+                <div class="timeline-content">
+                    <h3>El descubrimiento</h3>
+                    <p>
+                        Desde pequeña, la danza siempre me llamó la atención. Me fascinaba ver cómo el cuerpo podía expresar tanto sin decir una sola palabra. 
+                        Aunque en ese momento no tuve la oportunidad de formarme formalmente, sentía una conexión muy profunda con el arte, especialmente con el ballet. 
+                        Era un sueño que guardaba en silencio, pero que nunca dejé de imaginar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date"></div>
+                <div class="timeline-content">
+                    <h3>Entre la técnica y la pasión</h3>
+                    <p>
+                        Durante el colegio, formé parte del equipo de robótica, lo que despertó mi amor por la tecnología y la programación. 
+                        Sin embargo, la danza seguía ahí, latente, acompañándome en cada etapa. 
+                        A veces, mientras programaba o estudiaba, pensaba en lo mucho que me gustaría poder moverme libremente sobre un escenario.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date"></div>
+                <div class="timeline-content">
+                    <h3>Escuela Municipal de Artes</h3>
+                    <p>
+                        Después de años soñándolo, por fin decidí dar el paso e iniciar mi formación en la Escuela Municipal de Artes, 
+                        en el Técnico Laboral en Danza. Este momento marcó un antes y un después en mi vida. 
+                        Aprendí a conectar mi cuerpo con mis emociones, a valorar la disciplina y a entender que cada movimiento tiene un propósito y una historia detrás.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date"></div>
+                <div class="timeline-content">
+                    <h3>Participaciones artísticas</h3>
+                    <p>
+                        He tenido la oportunidad de participar en ferias y eventos culturales, experiencias que me han permitido compartir el arte con otras personas 
+                        y sentir la magia de estar sobre el escenario. Cada presentación ha sido un recordatorio de por qué amo tanto la danza: 
+                        porque me permite ser, sentir y transformar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date"></div>
+                <div class="timeline-content">
+                    <h3>Mi danza, mi reflejo</h3>
+                    <p>
+                        Hoy la danza es mucho más que una técnica para mí. Es una forma de vida. 
+                        En cada ensayo, en cada paso y en cada presentación, dejo una parte de mí. 
+                        Bailar me ha enseñado perseverancia, sensibilidad y amor por el proceso. 
+                        Es mi manera de expresarme, de sanar y de seguir creciendo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certificados</h2>
+                <p class="section-subtitle">Reconocimientos y certificaciones profesionales</p>
+            </div>
+            <div class="certificates-grid">
+                <div class="certificate-item" onclick="openCertificateModal('certificados/ParticipacionSimposio.jpg', 'Participación en Simposio', 'Evento Académico', '2025')">
+                    <div class="certificate-image">
+                        <img src="certificados/ParticipacionSimposio.jpg" alt="Participación en Simposio" class="certificate-img">
+                        <div class="certificate-overlay">
+                            <h3>Participación en Simposio</h3>
+                            <p>Evento Académico</p>
+                            <span class="certificate-year">2025</span>
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="certificate-item" onclick="openCertificateModal('certificados/CertificadoDayanaHimno.pdf', 'Certificado Dayana Himno', 'Reconocimiento Profesional', '2025')">
+                    <div class="certificate-image">
+                        <div class="certificate-pdf">
+                            <i class="fas fa-file-pdf"></i>
+                            <p>Certificado Dayana Himno</p>
+                            <div class="pdf-link">
+                                <i class="fas fa-expand-arrows-alt"></i> Ver Certificado
+                            </div>
+                        </div>
+                        <div class="certificate-overlay">
+                            <h3>Certificado Dayana Himno</h3>
+                            <p>Reconocimiento Profesional</p>
+                            <span class="certificate-year">2025</span>
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">¿Interesado en colaborar? ¡Hablemos!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>dayana82006@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Teléfono</h3>
+                            <p>+57 3125006423</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Ubicación</h3>
+                            <p>Bucaramanga, Colombia</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/dayana_08h?igsh=MWk5NG5vc29ra3Fsdg==" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1DT2afy7ZX/" class="social-link"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCertificateModal()">&times;</span>
+            <div class="modal-header">
+                <h3 id="modalTitle"></h3>
+                <p id="modalSubtitle"></p>
+                <span id="modalYear" class="modal-year"></span>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="" class="modal-img">
+                <iframe id="modalPdf" src="" class="modal-pdf" style="display: none;"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button onclick="downloadCertificate()" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Descargar
+                </button>
+                <button onclick="closeCertificateModal()" class="btn btn-secondary">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Portafolio Profesional. Todos los derechos reservados.</p>
+                <p>Diseñado con <i class="fas fa-heart"></i> para la danza</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
