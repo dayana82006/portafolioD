@@ -464,10 +464,90 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // Gallery lightbox
+    const galleryLightbox = document.getElementById('galleryLightbox');
+    const galleryLightboxImg = document.getElementById('galleryLightboxImg');
+    const galleryLightboxCaption = document.getElementById('galleryLightboxCaption');
+    const galleryLightboxClose = document.getElementById('galleryLightboxClose');
+    const galleryLightboxPrev = document.getElementById('galleryLightboxPrev');
+    const galleryLightboxNext = document.getElementById('galleryLightboxNext');
+    let galleryIndex = 0;
+
+    function visibleGalleryItems() {
+        return Array.from(document.querySelectorAll('.gallery-item')).filter(function(item) {
+            return item.style.display !== 'none';
+        });
+    }
+
+    function openGalleryAt(index) {
+        const items = visibleGalleryItems();
+        if (!items.length || !galleryLightbox) return;
+        galleryIndex = (index + items.length) % items.length;
+        const item = items[galleryIndex];
+        const img = item.querySelector('.gallery-img');
+        const title = item.querySelector('.gallery-overlay h3');
+        const subtitle = item.querySelector('.gallery-overlay p');
+        galleryLightboxImg.src = img.getAttribute('src');
+        galleryLightboxImg.alt = img.getAttribute('alt') || '';
+        galleryLightboxCaption.textContent = [title, subtitle]
+            .filter(Boolean)
+            .map(function(node) { return node.textContent.trim(); })
+            .join(' · ');
+        galleryLightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeGallery() {
+        if (!galleryLightbox || galleryLightbox.hidden) return;
+        galleryLightbox.hidden = true;
+        galleryLightboxImg.src = '';
+        document.body.style.overflow = 'auto';
+    }
+
+    galleryItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+            const items = visibleGalleryItems();
+            openGalleryAt(items.indexOf(item));
+        });
+        item.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                const items = visibleGalleryItems();
+                openGalleryAt(items.indexOf(item));
+            }
+        });
+    });
+
+    if (galleryLightboxClose) {
+        galleryLightboxClose.addEventListener('click', closeGallery);
+    }
+    if (galleryLightboxPrev) {
+        galleryLightboxPrev.addEventListener('click', function() {
+            openGalleryAt(galleryIndex - 1);
+        });
+    }
+    if (galleryLightboxNext) {
+        galleryLightboxNext.addEventListener('click', function() {
+            openGalleryAt(galleryIndex + 1);
+        });
+    }
+    if (galleryLightbox) {
+        galleryLightbox.addEventListener('click', function(event) {
+            if (event.target === galleryLightbox) {
+                closeGallery();
+            }
+        });
+    }
+
     // Close modal with Escape key
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             closeCertificateModal();
+            closeGallery();
+        }
+        if (galleryLightbox && !galleryLightbox.hidden) {
+            if (event.key === 'ArrowLeft') openGalleryAt(galleryIndex - 1);
+            if (event.key === 'ArrowRight') openGalleryAt(galleryIndex + 1);
         }
     });
 });
