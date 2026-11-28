@@ -324,9 +324,18 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 22%;
+    object-position: center center;
     transition: transform 0.3s ease;
     display: block;
+}
+
+.hero-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.34) 55%, rgba(0, 0, 0, 0.42) 100%);
+    pointer-events: none;
+    z-index: 2;
 }
 
 .hero-photo:hover .hero-img {
