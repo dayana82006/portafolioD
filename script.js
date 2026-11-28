@@ -179,30 +179,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Typing effect for hero title
-    function typeWriter(element, text, speed = 100) {
-        let i = 0;
-        element.innerHTML = '';
-        
-        function type() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
-            }
-        }
-        type();
-    }
-
-    // Initialize typing effect for hero title
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        setTimeout(() => {
-            typeWriter(heroTitle, originalText, 150);
-        }, 1000);
-    }
-
     // Counter animation for stats
     function animateCounter(element, target, duration = 2000) {
         let start = 0;
@@ -303,13 +279,13 @@ document.addEventListener('DOMContentLoaded', function() {
         right: 30px;
         width: 50px;
         height: 50px;
-        background: linear-gradient(135deg, #d4af37, #f4e4bc);
+        background: linear-gradient(135deg, #d8d8d8, #f4f4f4);
         color: #1a1a1a;
         border: none;
         border-radius: 50%;
         cursor: pointer;
         font-size: 1.2rem;
-        box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        box-shadow: 0 5px 15px rgba(220, 220, 220, 0.3);
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
@@ -340,12 +316,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add hover effect to scroll to top button
     scrollToTopBtn.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-3px)';
-        this.style.boxShadow = '0 8px 20px rgba(212, 175, 55, 0.4)';
+        this.style.boxShadow = '0 8px 20px rgba(220, 220, 220, 0.4)';
     });
 
     scrollToTopBtn.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0)';
-        this.style.boxShadow = '0 5px 15px rgba(212, 175, 55, 0.3)';
+        this.style.boxShadow = '0 5px 15px rgba(220, 220, 220, 0.3)';
     });
 
     // Preloader (optional)
