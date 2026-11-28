@@ -45,29 +45,50 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Gallery filter functionality
+    // Gallery filter and featured view
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryGrid = document.querySelector('.gallery-grid');
+    const galleryMore = document.getElementById('galleryMore');
+    let galleryFilter = 'all';
+    let galleryExpanded = false;
+
+    function applyGalleryView() {
+        const collapsed = galleryFilter === 'all' && !galleryExpanded;
+        if (galleryGrid) {
+            galleryGrid.classList.toggle('is-collapsed', collapsed);
+            galleryGrid.classList.toggle('is-filtered', galleryFilter !== 'all');
+        }
+        galleryItems.forEach(item => {
+            const category = item.getAttribute('data-category');
+            const matches = galleryFilter === 'all' || category === galleryFilter;
+            item.classList.toggle('is-hidden', !matches);
+        });
+        if (galleryMore) {
+            const showToggle = galleryFilter === 'all';
+            galleryMore.hidden = !showToggle;
+            galleryMore.setAttribute('aria-expanded', galleryExpanded ? 'true' : 'false');
+            galleryMore.textContent = galleryExpanded ? 'Ver las 6 destacadas' : 'Ver las 12 piezas';
+        }
+    }
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             this.classList.add('active');
-
-            const filterValue = this.getAttribute('data-filter');
-
-            galleryItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.style.display = 'block';
-                    item.style.animation = 'fadeInUp 0.5s ease-out';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+            galleryFilter = this.getAttribute('data-filter') || 'all';
+            applyGalleryView();
         });
     });
+
+    if (galleryMore) {
+        galleryMore.addEventListener('click', function() {
+            galleryExpanded = !galleryExpanded;
+            applyGalleryView();
+        });
+    }
+
+    applyGalleryView();
 
     // Contact form handling
     const contactForm = document.querySelector('.contact-form');
@@ -443,7 +464,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Gallery lightbox
     const galleryLightbox = document.getElementById('galleryLightbox');
     const galleryLightboxImg = document.getElementById('galleryLightboxImg');
-    const galleryLightboxCaption = document.getElementById('galleryLightboxCaption');
+    const galleryLightboxTitle = document.getElementById('galleryLightboxTitle');
+    const galleryLightboxStory = document.getElementById('galleryLightboxStory');
     const galleryLightboxClose = document.getElementById('galleryLightboxClose');
     const galleryLightboxPrev = document.getElementById('galleryLightboxPrev');
     const galleryLightboxNext = document.getElementById('galleryLightboxNext');
@@ -451,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function visibleGalleryItems() {
         return Array.from(document.querySelectorAll('.gallery-item')).filter(function(item) {
-            return item.style.display !== 'none';
+            return item.offsetParent !== null;
         });
     }
 
@@ -462,13 +484,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const item = items[galleryIndex];
         const img = item.querySelector('.gallery-img');
         const title = item.querySelector('.gallery-overlay h3');
-        const subtitle = item.querySelector('.gallery-overlay p');
+        const story = item.querySelector('.gallery-story');
         galleryLightboxImg.src = img.getAttribute('src');
         galleryLightboxImg.alt = img.getAttribute('alt') || '';
-        galleryLightboxCaption.textContent = [title, subtitle]
-            .filter(Boolean)
-            .map(function(node) { return node.textContent.trim(); })
-            .join(' · ');
+        if (galleryLightboxTitle) {
+            galleryLightboxTitle.textContent = title ? title.textContent.trim() : '';
+        }
+        if (galleryLightboxStory) {
+            galleryLightboxStory.textContent = story ? story.textContent.trim() : '';
+        }
         galleryLightbox.hidden = false;
         document.body.style.overflow = 'hidden';
     }
